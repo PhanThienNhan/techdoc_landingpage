@@ -1,0 +1,15 @@
+@media (max-width: 1000px){
+    .main-section{
+      background-color: white;
+    }
+  }
+
+  pre{
+    background-color: rgb(214, 214, 214);
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+  }
+
+  
