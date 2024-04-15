@@ -5,6 +5,7 @@
     <meta charset="utf-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <link rel="stylesheet" href="styles.css"></link>
+    <script src="https://kit.fontawesome.com/35aebe427f.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <main id="main-doc">
@@ -58,12 +59,12 @@
       </nav>
       <section class="content">
         <section id="introduction" class="main-section">
-          <h1>Introduction</h1>
+          <h1><a class="content-header">Introduction</a></h1>
           <p>HTML (HyperText Markup Language) is the code that is used to structure a web page and its content. For example, content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables. As the title suggests, this article will give you a basic understanding of HTML and its functions.</p>
         </section>
         <section id="definition" class="main-section">
-          <h1>So what is HTML?</h1>
-          <p>HTML is a markup language that defines the structure of your content. HTML consists of a series of elements, which you use to enclose, or wrap, different parts of the content to make it appear a certain way, or act a certain way. The enclosing tags can make a word or image hyperlink to somewhere else, can italicize words, can make the font bigger or smaller, and so on. For example, take the following line of content:</p>
+          <h1><a class="content-header">So what is HTML?</a></h1>
+          <p>HTML is a markup language that defines the structure of your content. HTML consists of a series of <strong><a class="char" href="https://developer.mozilla.org/en-US/docs/Glossary/Element">elements</a></strong>, which you use to enclose, or wrap, different parts of the content to make it appear a certain way, or act a certain way. The enclosing <a class="char" href="https://developer.mozilla.org/en-US/docs/Glossary/Tag">tags</a> can make a word or image hyperlink to somewhere else, can italicize words, can make the font bigger or smaller, and so on. For example, take the following line of content:</p>
           <pre class="plain-text">My cat is very grumpy</pre>
           <p>If we wanted the line to stand by itself, we could specify that it is a paragraph by enclosing it in paragraph tags:</p>
           <div class="code-block">
@@ -71,103 +72,118 @@
             <pre class="code-field"><code>&lt;p&gt;My cat is very grumpy&lt;/p&gt;</code>"
               </pre>
           </div>
-          <h2>Anatomy of an HTML element</h2>
+          <h2 id="anatomy-of-elements"><a class="content-header">Anatomy of an HTML element</a></h2>
           <p>Let's explore this paragraph element a bit further.</p>
           <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics/grumpy-cat-small.png" alt="anatony-of-an-html-element">
           <p>The main parts of our element are as follows:</p>
-          <ul>
-            <li><p>The opening tag: This consists of the name of the element (in this case, p), wrapped in opening and closing angle brackets. This states where the element begins or starts to take effect — in this case where the paragraph begins.</p></li>
-            <li><p>The closing tag: This is the same as the opening tag, except that it includes a forward slash before the element name. This states where the element ends — in this case where the paragraph ends. Failing to add a closing tag is one of the standard beginner errors and can lead to strange results.</p></li>
-            <li><p>The content: This is the content of the element, which in this case, is just text.</p></li>
-            <li><p>The element: The opening tag, the closing tag, and the content together comprise the element.</p></li>
-          </ul>
+          <ol>
+            <li><p><strong>The opening tag:</strong> This consists of the name of the element (in this case, p), wrapped in opening and closing angle brackets. This states where the element begins or starts to take effect — in this case where the paragraph begins.</p></li>
+            <li><p><strong>closing tag:</strong> This is the same as the opening tag, except that it includes a forward slash before the element name. This states where the element ends — in this case where the paragraph ends. Failing to add a closing tag is one of the standard beginner errors and can lead to strange results.</p></li>
+            <li><p><strong>The content:</strong> This is the content of the element, which in this case, is just text.</p></li>
+            <li><p><strong>The element:</strong> The opening tag, the closing tag, and the content together comprise the element.</p></li>
+          </ol>
           <p>Elements can also have attributes that look like the following:</p>
           <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics/grumpy-cat-attribute-small.png" alt="attribute-of-element">
-          <p>Attributes contain extra information about the element that you don't want to appear in the actual content. Here, class is the attribute name and editor-note is the attribute value. The class attribute allows you to give the element a non-unique identifier that can be used to target it (and any other elements with the same class value) with style information and other things. Some attributes have no value, such as required.</p>
+          <p>Attributes contain extra information about the element that you don't want to appear in the actual content. Here, <code class="char-code">class</code> is the attribute name and <code class="char-code">editor-note</code> is the attribute value. The class attribute allows you to give the element a non-unique identifier that can be used to target it (and any other elements with the same <code class="char-code">class</code> value) with style information and other things. Some attributes have no value, such as <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required" class="char"><code class="char-code">required</code></a>.</p>
           <p>Attributes that set a value always have:</p>
-          <ul>
+          <ol>
               <li><p>A space between it and the element name (or the previous attribute, if the element already has one or more attributes).</p></li>
               <li><p>The attribute name followed by an equal sign.</p></li>
               <li><p>The attribute value wrapped by opening and closing quotation marks.</p></li>
-          </ul>
-          <p>Note: Simple attribute values that don't contain ASCII whitespace (or any of the characters " ' ` = < >) can remain unquoted, but it is recommended that you quote all attribute values, as it makes the code more consistent and understandable.</p>
-          <h2>Nesting elements</h2>
-          <p>You can put elements inside other elements too — this is called nesting. If we wanted to state that our cat is very grumpy, we could wrap the word "very" in a &lt;strong&gt; element, which means that the word is to be strongly emphasized:</p>
-          <pre>
-              &lt;p&gt;My cat is &lt;strong&gt;very&lt;/strong&gt; grumpy.&lt;/p&gt;
-          </pre>
+          </ol>
+          <div class="note-block"><div><i class="fa-solid fa-circle-exclamation icon"></i></div><p>Note: Simple attribute values that don't contain <a class="char" href="https://developer.mozilla.org/en-US/docs/Glossary/ASCII">ASCII</a> whitespace (or any of the characters <span class="punctuation">"</span> <span class="punctuation">'</span><span class="punctuation">`</span><span class="punctuation">=</span><span class="punctuation"><</span><span class="punctuation">></span> ) can remain unquoted, but it is recommended that you quote all attribute values, as it makes the code more consistent and understandable.</p></div> 
+          <h2 id="nesting-elements"><a class="content-header">Nesting elements</a></h2>
+          <p>You can put elements inside other elements too — this is called <strong>nesting</strong>. If we wanted to state that our cat is <strong>very</strong> grumpy, we could wrap the word "very" in a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong">&lt;strong&gt;</a> element, which means that the word is to be strongly emphasized:</p>
+          <div class="code-block">
+            <div class="code-lang">HTML</div>
+            <pre class="code-field"><code>&lt;p&gt;My cat is &lt;strong&gt;very&lt;/strong&gt; grumpy.&lt;/p&gt;</code>"
+            </pre>
+          </div>
           <p>You do however need to make sure that your elements are properly nested. In the example above, we opened the <p> element first, then the &lt;strong&gt; element; therefore, we have to close the &lt;strong&gt; element first, then the <p> element. The following is incorrect:</p>
-          <pre>
-              &lt;p&gt;My cat is &lt;strong&gt;very grumpy&lt;/strong&gt; .&lt;/p&gt;
-          </pre>
+          <div class="code-block">
+            <div class="code-lang">HTML</div>
+            <pre class="wrong-field"><code>&lt;p&gt;My cat is &lt;strong&gt;very grumpy&lt;/strong&gt; .&lt;/p&gt;</code><span class="icon-container"><i class="fa-solid fa-circle-xmark icon"></i></span>
+              </pre>
+          </div>
           <p>The elements have to open and close correctly so that they are clearly inside or outside one another. If they overlap as shown above, then your web browser will try to make the best guess at what you were trying to say, which can lead to unexpected results. So don't do it!</p>
-          <h2>Void elements</h2>
-          <p>Some elements have no content and are called void elements. Take the &lt;img &gt; element that we already have in our HTML page:</p>
-          <pre>
-              &lt;img src="images/firefox-icon.png" alt="My test image" /&gt;
-          </pre>
+          <h2 id="void-elements"><a class="content-header">Void elements</a></h2>
+          <p>Some elements have no content and are called <a class="char" href="https://developer.mozilla.org/en-US/docs/Glossary/Void_element">void elements</a>. Take the <a class="char-code" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"> &lt;img &gt;</a> element that we already have in our HTML page:</p>
+          <div class="code-block">
+            <div class="code-lang">HTML</div>
+            <pre class="code-field"><code>&lt;img src="images/firefox-icon.png" alt="My test image" /&gt;</code>"
+              </pre>
+          </div>
           <p>This contains two attributes, but there is no closing </img> tag and no inner content. This is because an image element doesn't wrap content to affect it. Its purpose is to embed an image in the HTML page in the place it appears</p>
-          <h2>Anatomy of an HTML document</h2>
+          <h2 id="anatomy-of-document"><a class="content-header">Anatomy of an HTML document</a></h2>
           <p>That wraps up the basics of individual HTML elements, but they aren't handy on their own. Now we'll look at how individual elements are combined to form an entire HTML page. Let's revisit the code we put into our index.html example (which we first met in the Dealing with files article):</p>
           <pre>
-              <code>
-                  &lt;!doctype html&gt;
-                  &lt;html lang="en-US"&gt;
-                  &lt;head&gt;
-                      &lt;meta charset="utf-8" /&gt;
-                      &lt;meta name="viewport" content="width=device-width" /&gt;
-                      &lt;title&gt;My test page&lt;/title&gt;
-                  &lt;/head&gt;
-                  &lt;body&gt;
-                      &lt;img src="images/firefox-icon.png" alt="My test image" /&gt;
-                  &lt;/body&gt;
-                  &lt;/html&gt;
-              </code>
+            <code class="language-html line-numbers">
+<span>&lt;!doctype html&gt;</span>
+<span>&lt;html lang="en-US"&gt;<span>
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width" /&gt;
+    &lt;title&gt;My test page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;img src="images/firefox-icon.png" alt="My test image" /&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+            </code>
           </pre>
           <p>Here, we have the following:</p>
           <ul>
               <li>
                   <p>
-                      &lt;!DOCTYPE html&gt; — doctype. It is a required preamble. In the mists of time, when HTML was young (around 1991/92), doctypes were meant to act as links to a set of rules that the HTML page had to follow to be considered good HTML, which could mean automatic error checking and other useful things. However, these days, they don't do much and are basically just needed to make sure your document behaves correctly. That's all you need to know for now.
+                      <code class="char-code">&lt;!DOCTYPE html&gt;</code> — <a class="char" href="https://developer.mozilla.org/en-US/docs/Glossary/Doctype">doctype</a>. It is a required preamble. In the mists of time, when HTML was young (around 1991/92), doctypes were meant to act as links to a set of rules that the HTML page had to follow to be considered good HTML, which could mean automatic error checking and other useful things. However, these days, they don't do much and are basically just needed to make sure your document behaves correctly. That's all you need to know for now.
                   </p>
               </li>
               <li>
                   <p>
-                      &lt;html&gt;&lt;/html&gt; — the &lt;html&gt; element. This element wraps all the content on the entire page and is sometimes known as the root element. It also includes the lang attribute, setting the primary language of the document.
+                      <code class="char-code">&lt;html&gt;&lt;/html&gt;</code> — the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html"><code class="char-code">&lt;html&gt;</code></a>element. This element wraps all the content on the entire page and is sometimes known as the root element. It also includes the lang attribute, setting the primary language of the document.
                   </p>
               </li>
               <li>
                   <p>
-                      &lt;head&gt;&lt;/&gt;ead> — the &lt;head&gt; element. This element acts as a container for all the stuff you want to include on the HTML page that isn't the content you are showing to your page's viewers. This includes things like keywords and a page description that you want to appear in search results, CSS to style our content, character set declarations, and more.
+                      &lt;head&gt;&lt;/head&gt; — the <a class="char-code" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head">&lt;head&gt;</a> element. This element acts as a container for all the stuff you want to include on the HTML page that isn't the content you are showing to your page's viewers. This includes things like <a class="char"" href="https://developer.mozilla.org/en-US/docs/Glossary/Keyword">keywords</a> and a page description that you want to appear in search results, CSS to style our content, character set declarations, and more.
                   </p>
               </li>
               <li>
                   <p>
-                      &lt;meta charset="utf-8"&gtl — This element sets the character set your document should use to UTF-8 which includes most characters from the vast majority of written languages. Essentially, it can now handle any textual content you might put on it. There is no reason not to set this, and it can help avoid some problems later on.
+                      <code class="char-code">&lt;meta charset="utf-8"&gt;</code> — This element sets the character set your document should use to UTF-8 which includes most characters from the vast majority of written languages. Essentially, it can now handle any textual content you might put on it. There is no reason not to set this, and it can help avoid some problems later on.
                   </p>
               </li>
               <li>
                   <p>
-                      &lt;meta name="viewport" content="width=device-width"&gt; — This viewport element ensures the page renders at the width of viewport, preventing mobile browsers from rendering pages wider than the viewport and then shrinking them down.
+                    <code class="char-code">&lt;meta name="viewport" content="width=device-width"&gt;</code> — This <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts#mobile_viewports" class="char">viewport element</a> ensures the page renders at the width of viewport, preventing mobile browsers from rendering pages wider than the viewport and then shrinking them down.
                   </p>
               </li>
               <li>
                   <p>
-                      &lt;title&gt;&lt;/&gt;itle> — the &lt;title&gt; element. This sets the title of your page, which is the title that appears in the browser tab the page is loaded in. It is also used to describe the page when you bookmark/favorite it.
+                    <code class="char-code">&lt;title&gt;&lt;/title&gt;</code> — the <a class="char-code" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">title</code></a> element. This sets the title of your page, which is the title that appears in the browser tab the page is loaded in. It is also used to describe the page when you bookmark/favorite it.
                   </p>
               </li>
               <li>
                   <p>
-                      &lt;body&gt;&lt;/body&gt; — the &lt;body&gt; element. This contains all the content that you want to show to web users when they visit your page, whether that's text, images, videos, games, playable audio tracks, or whatever else.
+                      <code class="char-code">&lt;body&gt;&lt;/body&gt;</code> — the <a class="char-code" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;</a></code> element. This contains all the content that you want to show to web users when they visit your page, whether that's text, images, videos, games, playable audio tracks, or whatever else.
                   </p>
               </li>
           </ul>
       </section>
         <section id="image" class="main-section">
-          <header>Image</hearder>
+          <h1><a class="content-header">Image</a></h1>
           <p>Let's turn our attention to the &lt;img&gt; element again:</p>
-          <p></p>
-          <p></p>
+          <div class="code-block">
+            <div class="code-lang">HTML</div>
+            <pre class="code-field"><code>&lt;src="images/firefox-icon.png" alt="My test image" /&gt;</code>"
+              </pre>
+          </div>
+          <p>As we said before, it embeds an image into our page in the position it appears. It does this via the <code class="char-code">src</code> (source) attribute, which contains the path to our image file.</p>
+          <p>We have also included an <code class="char-code">alt</code> (alternative) attribute. In the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#authoring_meaningful_alternate_descriptions" class="char"><code class="char-code">alt</code> attribute</a>, you specify descriptive text for users who cannot see the image, possibly because of the following reasons:</p>
+          <ol>
+            <li></li>
+            <li></li>
+          </ol>
           <p></p>
           <p></p>
           <p></p>
@@ -190,7 +206,7 @@
           </ul>
         </section>
         <section id="marking-up-text"" class="main-section">
-          <header>Marking up text</hearder>
+          <header><a class="content-header">Marking up text</a></hearder>
           <p></p>
           <p></p>
           <p></p>
@@ -216,7 +232,7 @@
           </ul>
         </section>
         <section id="link" class="main-section">
-          <header>Link</hearder>
+          <header><a class="content-header">Link</a></hearder>
           <p></p>
           <p></p>
           <p></p>
@@ -242,7 +258,7 @@
           </ul>
         </section>
         <section id="conclusion" class="main-section">
-          <header>Conclusion</hearder>
+          <header><a class="content-header">Conclusion</a></hearder>
           <p></p>
           <p></p>
           <p></p>
@@ -268,7 +284,7 @@
           </ul>
         </section>
         <section id="reference" class="main-section">
-          <header>Reference</hearder>
+          <header><a class="content-header">Reference</a></hearder>
           <p></p>
           <p></p>
           <p></p>
